@@ -1,0 +1,206 @@
+body {
+    font-size: 11px;
+    line-height: 16px;
+    font-family:Verdana, Arial, Helvetica, sans-serif
+}
+
+footer, article, .comment {
+    ul > li {
+        list-style-image: url(/static_theme/static/images/square.gif);
+    }
+}
+#socialshareprivacy li {
+    list-style-image: none;
+}
+
+
+h1 {
+    border-bottom:1px solid #ccc;
+    color:#000000;
+    //font-size:1.27em;
+    margin:-1px 0 14px;
+    padding-bottom:10px;
+    padding-top:10px; /* neu */
+    line-height:16px;
+}
+h2 {
+    color:#000000;
+    //font-size:1.0909em;
+    font-weight:700;
+    line-height:16px;
+    margin:0;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+h3, #col3 h3 {
+    //color:#808080;
+    color: $black;
+    font-size:1.5em;
+    font-weight:700;
+    line-height:16px;
+    margin:0;
+    padding-bottom:8px;
+}
+h4 {
+    background:url(/img/intern/headline_bg.gif) center left repeat-x;
+    //font-size:1em;
+    height:1.45em;
+    margin-bottom:5px;
+}
+h5 {
+    color:#000000;
+    //font-size:1em;
+    margin:-1px 0 14px;
+    line-height:16px;
+}
+
+.sidebar_box {
+    @include kit-rund-eckig(1em);
+}
+ul#subnav > li {
+    background: #F4F4F4;
+    a {
+        color: #7f7f7f;
+    }
+    &:hover, &.current:hover {
+        background: $primary-color-70;
+        a {color: white};
+    }
+    &.current {
+        background: $primary-color;
+        a {color: white};
+    }
+}
+
+#searchform #searchsubmit, #proposals-search .go {
+    @include kit-gradient($button-color);
+    &:hover {
+        @include kit-gradient(lighten($button-color, 7%));
+    }
+    padding: 0 2em;
+}
+
+.list_filter {
+    padding-right: 0;
+    padding-left: 0;
+}
+#proposals_table, .table {
+    .pager_wrapper {
+        background: #f4f4f4;
+        padding: 1em;
+        .hr, hr {
+            display: none;
+        }
+        ul.content_list {
+            > * {
+                padding: 1em;
+                &:nth-of-type(odd) {
+                    background: #fff;
+                }
+                &:nth-of-type(even) {
+                    background: transparent;
+                }
+                .meta {
+                    color: #888;
+                    margin: 0;
+                }
+                @include kit-rund-eckig(1em);
+            }
+        }
+    }
+}
+
+body {
+    background-color: #fff;
+    @include kit-rund-eckig(1em);
+}
+
+body {
+    width: 1004px;
+    margin: 0 auto;
+    padding: 2em;
+}
+div.kit-wrapper {
+    @include kit-rund-eckig(2em);
+    padding: 0.2em;
+    @include box-shadow(0 0 1.5em 0.2em rgba(127, 127, 127, 0.4));
+}
+div.old-body {
+    background: #e5e5e5;
+    padding: 1em;
+    @include border-bottom-left-radius(1.8em);
+}
+#main {
+    padding: 3em 0 2em;
+    margin: 0;
+}
+.page_margins {
+    margin: 0;
+}
+#subheader {
+    background: none;
+    margin-bottom: 0;
+}
+#footer {
+    background: none;
+    .page_wrapper {
+        background: none;
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+}
+.page_margins {
+    width: auto;
+}
+
+/* Metanavigation */
+div#metanavigation {
+    color:#B3B3B3;
+    padding-right: 1em;
+    z-index:2;
+    font-size:.9091em;
+    line-height:2.5455em;
+    text-align:right;
+}
+div#metanavigation a:link,div#metanavigation a:active,div#metanavigation a:visited {
+    color:#4D4D4D;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+div#metanavigation a:hover {
+    text-decoration:underline;
+}
+
+#kit-header {
+    height: 100px;
+    position: relative;
+    #kit-logo {
+        @include box-sizing('border-box');
+        padding: 1em 2em;
+        background: white;
+        height: 100%;
+        display: inline-block;
+    }
+    h1 {
+        font-size: 15px;
+        margin: 0;
+        padding: 0.8em 1em;
+        border: none;
+        @include border-top-right-radius(1em);
+        background: white;
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+    }
+    background: url(/static_theme/static/images/random.jpg) 200px;
+    @include border-top-right-radius(1.8em);
+}
+
+#organisation_logo {
+    padding: 0;
+}
+
+#new_proposals_table .pager_wrapper {
+    margin-bottom: 1em;
+}

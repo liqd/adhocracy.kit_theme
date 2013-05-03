@@ -1,0 +1,23 @@
+
+@mixin kit-gradient($color) {
+    $color1: lighten(desaturate($color, 60%), 20%);
+    $color2: $color;
+    $color3: darken(desaturate($color, 0%), 10%);
+    $color4: $color;
+
+    background: $color;
+    background: -moz-linear-gradient(top, $color1 0%, $color2 47%, $color3 53%, $color4 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(47%,$color2), color-stop(53%,$color3), color-stop(100%,$color4));
+    background: -webkit-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
+    background: -o-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
+    background: -ms-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
+    background: linear-gradient(top bottom, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
+    @include filter-gradient($color2, $color3, vertical);
+
+    border: 1px solid $color;
+}
+
+@mixin kit-rund-eckig($radius) {
+    @include border-top-right-radius($radius);
+    @include border-bottom-left-radius($radius);
+}

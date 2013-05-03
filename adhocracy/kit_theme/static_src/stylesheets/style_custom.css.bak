@@ -1,0 +1,284 @@
+/*****************************************************
+*  style_custom.css
+*
+*  Custom ypart css to override adhocracy css
+*
+*  - Main navigation
+*  - Tabs onboarding aboutpage
+*
+******************************************************/
+
+/* Font */
+h1, h2, h3, h4, h5, a, legend, .tabnav li a.active, .tabnav li a:hover  {
+  color: #134d7f;
+}
+a {
+color: #134d7f;
+}
+label {
+  font-weight: normal;
+}
+
+/* Logo */
+#logo {
+height: 90px;
+}
+
+/* Navigation */
+
+#subnav li, #subnav li.current {
+  background-image: url('/static_theme/static/images/sprite_tab_navigation.png');
+}
+#subnav li a {
+  color: #838383;
+}
+#subnav li.current a, #subnav li a:hover {
+  color: #333;
+}
+#subnav li:hover {
+background-image: url('/static_theme/static/images/sprite_tab_navigation.png');
+}
+#nav li.current {
+  background-image: url('/static_theme/static/images/gradient_navi_highlight.png');
+}
+#nav ul.children {
+  background-image: url('/static_theme/static/images/gradient_navi_dropdown.png');
+}
+#nav ul.children li {
+  background-image: url('/static_theme/static/images/line_navi_dropdown.png');
+}
+#nav li:hover {
+  background-image: url('/static_theme/static/images/gradient_navi_hover.png');
+}
+.menu.hlist {
+  padding-top: 8px;
+}
+/* Button border, background, color */
+a.button_small,
+a.show_comments:hover, a.new_comment:hover, a.participate,
+.vote, .vote.big, .vote_count, .button_small, .vote_up, .vote_down, .vote_,
+.vote.big .vote_down:active, .vote.big .vote_down.active,
+.vote.big .vote_down:hover,
+.vote.big .vote_up:active, .vote.big .vote_up.active,
+.vote.big .vote_up:hover,
+.vote_up:hover,
+.vote_up:active, .vote_up.active,
+.vote_down:hover,
+.vote_down:active, .vote_down.active {
+  background-image: url('/static_theme/static/images/sprite_buttons_small.png');
+}
+a.button_small,
+a.show_comments:hover, a.new_comment:hover, a.participate {
+  color: #333;
+}
+.vote, .vote.big, .follow_paper, .button_small, a.button, .submit input, submit button {
+  /* Naive border solution for now */
+  border: 1px solid #c1c1c1;
+}
+a.button, .submit input, submit button {
+  color: #fff;
+}
+.vote_up, .vote_down {
+  background: url('/static_theme/static/images/sprite_buttons_small.png') repeat-x 0 -450px;
+}
+a.button, .submit input, submit button {
+  background-image: url('/static_theme/static/images/sprite_buttons.png');
+  color: #fff;
+  height: 25px;
+  line-height: 25px;
+}
+.pager .current, .pager a:active,
+.pager a:hover,
+a.button,
+a.follow_paper,
+.submit input, .submit button {
+  background-image: url("/static_theme/static/images/sprite_buttons.png") !important;
+}
+.submit input, .submit button {
+  color: #fff;
+  border: 1px solid #c1c1c1;
+}
+
+.pager a, .pager span {
+  border: 1px solid white;
+  font-weight: bold;
+  background: none;
+  padding: 4px 14px;
+}
+.pager .current, .pager a:active, .pager a:hover {
+  border: 1px solid #c1c1c1;
+  background-image: url('/static_theme/static/images/sprite_buttons.png');
+  color: #fff;
+}
+.pager a {
+  color: #3b893d;
+}
+
+.register {
+ line-height: 33px;
+}
+
+.register a.button {
+  background-position: 0 -200px;
+  border: 1px solid #3e753e;
+  font-size: 125%;
+  line-height: 33px;
+  height: 35px;
+  padding-right: 18px;
+}
+.register a:hover.button {
+  background-position: 0 -250px;
+}
+
+  /* Search */
+#searchform #searchsubmit, .list_form input.go {
+  color: #333;
+  background-image: url('/static_theme/static/images/button_grey.png');
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c2c2c2;
+}
+
+  /* Sprite icons overrides (close button mainly */
+
+.info_box .close_button, .overlay a.close,
+  .vote_up span, .vote_down span,
+  .vote.big .vote_up span,
+  .vote.big .vote_down span,
+  a.show_comments:after, a.new_comment:after
+{
+  background-image: url('/static_theme/static/images/sprite_icons.png');
+}
+
+
+
+/* Background */
+
+#header {
+  background-image: url('/static_theme/static/images/gradient_header.png');
+}
+#subheader {
+  background-image: url('/static_theme/static/images/tabs_bg_large.png');
+}
+.comment_form {
+  background-color: #fff;
+}
+.comments_list li {
+  background-color: #f7f6f4;
+  border-top: 4px solid white !important;
+}
+
+.content_list {
+/* disturbed on proposal list, needed somewhere else? */
+/*  background: #f7f6f4; */
+  margin-bottom: 22px;
+}
+li.content_box {
+  background: #fff;
+}
+li.content_box h3, li.content_box .meta {
+  padding: 0 11px;
+}
+li.content_box:nth-child(2n+2) {
+  background: #f7f6f4;
+  border-bottom: 1px dotted #CCC;
+  border-top: 1px dotted #CCC;
+}
+.tooltip {
+  background: #fffde4;
+}
+
+/*Main navigation*/
+
+#nav li {
+  padding-top: 7px; /*make drop down menus work*/
+}
+body.compact #nav li,
+body.compact #nav li a {
+  height: 24px;
+}
+
+#current_logo,
+#user_menu {
+  background-image: url('/static_theme/static/images/line_header.png');
+}
+
+ /*Wordpress pages sidebar*/
+
+#main .widget-area .shailan_SubpagesWidget,
+#main .widget-container ul,
+#main ul.subpages li,
+#main .widget-container {
+  list-style: none;
+  background: none;
+}
+#col3 #secondary {
+  padding-top: 20px;
+}
+
+/* override bootstrap stuff */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: auto;
+}
+img {
+  height: none; /*ugly hack to unset hight -joka */
+}
+
+/*footer*/
+.c33l, .c33r {
+  width: 32.333%;
+}
+#footer,
+#footer_line,
+#footer .page_wrapper,
+#second_footer_line {
+  background-color: transparent;
+  background-image: none;
+}
+#footer_line {
+  border-top: 1px dotted #c5c5c5;
+  padding-top:20px;
+}
+#second_footer_line > div:first-child {
+  border-right: 1px dotted #c5c5c5;
+  margin-right: 10px;
+}
+#footer, .footer_content h3, .footer_content a {
+  color: #134d7f;
+  text-decoration: none;
+}
+
+#link_footer_ijab img, #link_footer_youthpart img {
+  width: 100px;
+}
+#link_footer_youthpart img {
+  margin-left: 30px;
+}
+#link_footer_bmfsfj img {
+  width: 230px;
+}
+/* override geo.css / startpage stuff */
+#content-bottom,
+#map_wrapper {
+  display:none;
+}
+#content-startpage {
+    background-image: none;
+    background-color: transparent;
+    float: left;
+    height: 342px;
+    width: 984px;
+}
+.global-startpage #main {
+  background-image: url('/static_theme/static/images/gradient_content_startpage.png');
+  background-repeat: repeat-x;
+  height: 400px;
+  margin-top: 54px;
+  margin-bottom: 70px;
+}
+#content-startpage .register {
+  text-align:left;
+}
+#content-top {
+  height: auto !important;
+}

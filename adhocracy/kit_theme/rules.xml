@@ -1,0 +1,189 @@
+<rules
+  xmlns="http://namespaces.plone.org/diazo"
+  xmlns:css="http://namespaces.plone.org/diazo/css"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <theme href="theme.html" />
+
+  <!--do not theme ajax requests-->
+  <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_notheme.xml" />
+
+  <rules if-content="/html/body/div[@id='main']">
+
+    <!-- Head: meta -->
+    <drop theme="/html/head/meta" if-content="/html/head/meta"/>
+    <prepend theme="/html/head" content="/html/head/meta" />
+    <!-- Head: title -->
+    <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_header.xml" />
+    <!-- Head: base tag -->
+    <replace theme="/html/head/base" content="/html/head/base" />
+    <!-- Head: styles and scripts-->
+    <drop theme="/html/head/link[not(contains(@href, 'style_custom.css')) and contains(@rel, 'stylesheet')]" if-content="/html/head/link"/>
+    <before theme="/html/head/link[1]" content="/html/head/link[contains(@rel, 'stylesheet')]" />
+    <drop theme="/html/head/script" if-content="/html/head/script"/>
+    <append theme="/html/head" content="/html/head/script" />
+    <append theme="/html/head" content="/html/head/style" />
+    <!-- RSS -->
+    <replace theme="/html/head/link[contains(@type, 'application/rss+xml')]" content="/html/head/link[contains(@type, 'application/rss+xml')]" />
+    <!-- Favicon -->
+    <replace theme="/html/head/link[contains(@rel, 'icon')]" content="/html/head/link[contains(@rel, 'icon')]" />
+    <!--Conditional comments-->
+    <append theme="/html/head">
+      <xsl:for-each select="/html/head/comment()">
+        <xsl:copy />
+      </xsl:for-each>
+    </append>
+
+    <!--Fix wordpress links -->
+    <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_fixlinks.xml" />
+    <replace content="//a[@class='staticlink_imprint']/attribute::href" ><xsl:attribute name="href">/_pages/imprint</xsl:attribute></replace>
+
+    <!--Body-->
+    <drop theme="/html/body/div/div[@class='old-body']/*" if-content="/html/body"/>
+    <append theme="/html/body/div/div[@class='old-body']" content="/html/body/*" />
+
+    <!--Logo and Topnav-->
+      <!-- if body.compact -->
+      <drop content="//a[@id='logo']/img/attribute::src"/>
+      <!-- if not body.compact -->
+      <rules if-content="not(//body[contains(@class, 'compact')])">
+        <replace content="//a[@id='logo']/img/attribute::src"><xsl:attribute name="src">/static_theme/static/images/logo_ypart_large.png</xsl:attribute></replace>
+        <replace css:content="div#topnav" if-content="not(//body[@class='compact'])">
+          <div id="topnav">
+              <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
+              <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
+              <a href="http://twitter.com/liqd_de" class="icon_link follow">Follow us!</a>
+              <xsl:copy-of select="//li[@id='nav_login']/a" />
+          </div>
+        </replace>
+        <drop css:content="li#nav_login" />
+      </rules>
+    <!--Navigation - about menu-->
+    <replace css:content="li#nav_about > a">
+      <a href="/_pages/ueber_uns" class="" rel="" title="Über uns" id="about_menu_link">Über Uns</a>
+      <ul class="children">
+            <li class="page_item">
+              <a href="/_pages/ueber_uns/das-projekt/" title="Das Projekt">Das Projekt</a>
+            </li>
+            <li class="page_item">
+              <a href="/_pages/ueber_uns/liquid_democracy_ev/" title="Liquid Democracy e.V.">Liquid Democracy e.V.</a>
+            </li>
+            <li class="page_item">
+              <a href="/_pages/ueber_uns/projektpartner/" title="Projektpartner">Projektpartner</a>
+            </li>
+            <li class="page_item">
+              <a href="/_pages/ueber_uns/open_source/" title="Open Source">Open Source</a>
+            </li>
+            <li class="page_item">
+              <a href="/_pages/ueber_uns/kontakt/" title="">Kontakt</a>
+            </li>
+         </ul>
+    </replace>
+    <rules if-path="/_pages/das_projekt">
+     <replace content="//li[@id='nav_about']/attribute::class"><xsl:attribute name="class">current</xsl:attribute></replace>
+     <replace content="//li[@id='nav_home']/attribute::class"><xsl:attribute name="class"></xsl:attribute></replace>
+    </rules>
+
+    <!--Navigation - engagieren-->
+    <drop css:content="li#nav_dummy"/>
+
+    <!--Navigation - help-->
+    <replace css:content="li#nav_help > a">
+        <a href="/_pages/hilfe" title="">Hilfe</a>
+        <ul class="children">
+          <li class="page_item">
+            <a href="/_pages/hilfe/anleitungen" title="Anleitungen">Anleitungen</a>
+          </li>
+          <li class="page_item">
+            <a href="/_pages/hilfe/faq" title="FAQ">FAQ</a>
+          </li>
+          <li class="page_item">
+            <a href="/_pages/hilfe/formatierungshilfen" title="Formatierungshilfen">Formatierungshilfen</a>
+          </li>
+          <li class="page_item">
+            <a href="/_pages/hilfe/beratung_und_schulungen" title="Beratung und Schulungen">Beratung und Schulungen</a>
+          </li>
+          <li class="page_item">
+            <a href="/_pages/hilfe/technischer_support" title="Technischer Support">Technischer Support</a>
+          </li>
+        </ul>
+    </replace>
+    <rules if-path="/_pages/hilfe">
+     <replace content="//li[@id='nav_help']/attribute::class"><xsl:attribute name="class">current</xsl:attribute></replace>
+     <replace content="//li[@id='nav_home']/attribute::class"><xsl:attribute name="class"></xsl:attribute></replace>
+     <replace content="//li[@id='nav_instances']/attribute::class"><xsl:attribute name="class"></xsl:attribute></replace>
+    </rules>
+
+    <!--Content startpage: merge wordpres startpage-->
+    <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_startpage.xml" />
+
+    <!--Content body and sidebar: aboutpage with merged wordpress-->
+    <rules if-path="/_pages/ueber_uns/das-projekt">
+      <replace content="//div[@id='main']/attribute::class" ><xsl:attribute name="class">with_wordpress_tabs</xsl:attribute></replace>
+      <drop css:content="#col1" attributes="id" />
+      <drop css:content="#col3" />
+    </rules>
+
+    <!--Content body and sidebar: wordpress pages (/_pages)-->
+    <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_pages.xml" />
+    <xi:include href="rules_wordpress_javascript.xml" />
+
+    <!--Fix links-->
+    <replace content="//a[contains(@href, '/static/about.html')]/attribute::href" ><xsl:attribute name="href">/_pages/ueber_uns/das-projekt</xsl:attribute></replace>
+
+    <!-- Footer -->
+    <replace css:content="footer">
+      
+        <footer>
+            <div id="footer">
+                <div class="page_margins">
+                    <div class="page_wrapper">
+                        <div id="footer_line">
+                            <div id="second_footer_line" class="subcolumns" role="complementary">
+                                <div class="c33l footer_content">
+                                    <ul><li><a class="staticlink_about" href="/_pages/ueber_uns/das-projekt">
+                                                Wie funktioniert Adhocracy?
+                                        </a></li>
+                                        <li><a class="staticlink_codex" href="/_pages/codex">
+                                                Verhaltenscodex
+                                        </a></li>
+                                        <li><a class="staticlink_terms" href="/_pages/terms">
+                                                Nutzungsbedingungen
+                                        </a></li>
+
+                                        <li><a class="staticlink_privacy" href="/_pages/privacy">
+                                                Datenschutz
+                                        </a></li>
+                                        <li><a class="staticlink_imprint" href="/_pages/imprint">
+                                                Impressum
+                                        </a></li>
+                                </ul></div>
+                                <div class="c33l footer_content">
+                                </div>
+
+                                <div class="c33r footer_content">
+                                    <div class="subcr">
+                                        <div class="footer_box">
+                                            <div class="subcolumns">
+                                                <h3>Diese Plattform wird betrieben mit</h3>
+                                                <p><a href="https://github.com/liqd/adhocracy/" title="AdhocracyCode" id="link_footer_logo"><img src="/images/logo_adhocracy_code_footer.png" alt="AdhocracyCode" /></a></p>
+                                                <p>
+                                                    <a href="http://creativecommons.org/licenses/by/3.0/de/" rel="license"><img src="/images/80x15.png" alt="Creative Commons License" /></a>
+                                                    <a href="http://www.opendefinition.org/" rel="license"><img src="/images/oc_80x15_blue.png" alt="Open Definition" /></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </replace>
+
+  </rules>
+</rules>

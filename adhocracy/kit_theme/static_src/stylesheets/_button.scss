@@ -1,0 +1,191 @@
+@mixin base-button {
+    text-decoration: none;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin button($color) {
+    @include base-button;
+    line-height: 2.6em;
+    height: 2.6em;
+    font-weight: bold;
+    padding: 0 1em;
+
+    color: #fff;
+    @include kit-gradient($color);
+    &:hover {
+        color: #fff;
+        @include kit-gradient(lighten($color, 7%));
+    }
+
+    @include kit-rund-eckig(0.4em);
+}
+
+@mixin button-small($color1, $color2) {
+    @include base-button;
+    height: 14px;
+    line-height: 14px;
+    border-radius: 7px;
+    padding: 0 10px;
+    font-size: 11px;
+
+    color: #fff;
+    @include linear-gradient(top, lighten($color1, 7%), $color1);
+    &:hover {
+        color: #fff;
+        @include linear-gradient(top, lighten($color2, 7%), $color2);
+    }
+}
+
+@mixin round-button {
+    @include base-button;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    @include border-radius(13px);
+
+    color: $black;
+    @include linear-gradient(0deg, darken(#fff, 10%), #fff);
+    border: 1px solid darken(#fff, 15%);
+    &:hover {
+        color: $black;
+        @include linear-gradient(0deg, darken(#fff, 12%), darken(#fff, 2%));
+    }
+}
+
+a.button {
+    @include button($button-color);
+}
+a.button.highlight {
+    @include button($primary-color);
+}
+
+.register a.button {
+    @include button($register-color);
+    &.large {
+        /* hack: width is normally 240px, but then right-arrow is too far right */
+        width: 240px;
+    }
+    &:after {
+        // TODO
+        content: ">";
+        padding-left: 10px;
+    }
+}
+
+.submit input, .submit button, button[type="submit"] {
+    @include button($primary-color);
+    font-size: inherit;
+}
+
+a.button_small {
+    @include button-small($button-color, $primary-color);
+    color: #fff;
+
+    &:active, &.active {
+        @include linear-gradient(bottom, lighten($primary-color, 7%), $primary-color);
+        @include box-shadow(1px 1px 1px #333 inset);
+    }
+
+    &.on:hover {
+        @include linear-gradient(top, lighten($register-color, 7%), $register-color);
+    }
+    &.on:active, a.button_small.on.active {
+        @include linear-gradient(bottom, lighten($register-color, 7%), $register-color);
+    }
+
+    &.off:hover {
+        background-position: 0 -50px;
+    }
+    &.off:active, &.off.active {
+        background-position: 0 -100px;
+    }
+
+    .inactive & {
+        @include linear-gradient(top, #eee, #ddd);
+        @include box-shadow(none);
+    }
+}
+
+// bootstrap compability
+.btn-mini {
+    @include button-small($button-color, $primary-color);
+}
+
+a.show_comments:hover, a.new_comment:hover, a.participate {
+    @include button-small($primary-color, $primary-color);
+}
+
+/* follow button */
+a.follow_paper, div.skip_follow {
+    height: 26px;
+    line-height: 26px;
+    @include border-radius(13px);
+    overflow: hidden;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0 20px;
+}
+
+a.follow_paper {
+    @include round-button;
+    .sidebar_box & {
+        margin-top: 20px;
+    }
+
+    // icon
+    &:before {
+        content: "✚";
+        margin-right: 10px;
+        color: #fff;
+        @include linear-gradient(275deg, lighten($button-color, 14%), $button-color);
+
+        // circle
+        display: inline-block;
+        text-align: center;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        @include border-radius(50%);
+    }
+    &:hover:before {
+        @include linear-gradient(275deg, lighten($green, 14%), $green);
+    }
+    &.active:before {
+        content: "✔";
+        @include linear-gradient(275deg, lighten($green, 14%), $green);
+    }
+    &.active:hover:before {
+        content: "×";
+        @include linear-gradient(275deg, lighten($red, 14%), $red);
+    }
+}
+
+/* delegate button */
+a.button.delegate {
+    @include round-button;
+    margin: 0 0 20px;
+}
+
+// TODO should this really be a button?
+.showhide_button {
+    @include button($button-color);
+    &:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top:     4px solid;
+        border-right: 4px solid transparent;
+        border-left:    4px solid transparent;
+        content: "";
+        vertical-align: middle;
+    }
+}
