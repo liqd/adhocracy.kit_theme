@@ -13,63 +13,20 @@ footer, article, .comment {
     list-style-image: none;
 }
 
-
-h1 {
-    border-bottom:1px solid #ccc;
-    color:#000000;
-    //font-size:1.27em;
-    margin:-1px 0 14px;
-    padding-bottom:10px;
-    padding-top:10px; /* neu */
-    line-height:16px;
-}
-h2 {
-    color:#000000;
-    //font-size:1.0909em;
-    font-weight:700;
-    line-height:16px;
-    margin:0;
-    padding-top:8px;
-    padding-bottom:8px;
-}
-h3, #col3 h3 {
-    //color:#808080;
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
     color: $black;
-    font-size:1.5em;
-    font-weight:700;
-    line-height:16px;
-    margin:0;
-    padding-bottom:8px;
+    font-weight: 700;
+}
+h1 {
+    border-bottom: 1px solid $grey3;
 }
 h4 {
     background:url(/img/intern/headline_bg.gif) center left repeat-x;
-    //font-size:1em;
-    height:1.45em;
-    margin-bottom:5px;
-}
-h5 {
-    color:#000000;
-    //font-size:1em;
-    margin:-1px 0 14px;
-    line-height:16px;
 }
 
 .sidebar_box {
     @include kit-rund-eckig(1em);
-}
-ul#subnav > li {
-    background: #F4F4F4;
-    a {
-        color: #7f7f7f;
-    }
-    &:hover, &.current:hover {
-        background: $primary-color-70;
-        a {color: white};
-    }
-    &.current {
-        background: $primary-color;
-        a {color: white};
-    }
 }
 
 #searchform #searchsubmit, #proposals-search .go {
@@ -140,6 +97,7 @@ div.old-body {
 #subheader {
     background: none;
     margin-bottom: 0;
+    padding-top: 0;
 }
 #footer {
     background: none;
@@ -151,6 +109,18 @@ div.old-body {
 }
 .page_margins {
     width: auto;
+}
+
+/* top navigation */
+.hlist ul {
+    list-style: none;
+    display: inline;
+    > li {
+    display: inline-block;
+    }
+}
+.content_list > li {
+    border: none;
 }
 
 /* Metanavigation */

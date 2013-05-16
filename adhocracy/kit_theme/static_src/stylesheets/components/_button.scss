@@ -138,7 +138,7 @@ a.follow_paper, div.skip_follow {
 a.follow_paper {
     @include round-button;
     .sidebar_box & {
-        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     // icon
