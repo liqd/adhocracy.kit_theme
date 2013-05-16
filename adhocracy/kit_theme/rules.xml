@@ -54,10 +54,8 @@
               <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
               <a class="skip" title="skip link" href="#content">Skip to the content</a><span class="hideme">.</span>
               <a href="http://twitter.com/liqd_de" class="icon_link follow">Follow us!</a>
-              <xsl:copy-of select="//li[@id='nav_login']/a" />
           </div>
         </replace>
-        <drop css:content="li#nav_login" />
       </rules>
     <!--Navigation - about menu-->
     <replace css:content="li#nav_about > a">
