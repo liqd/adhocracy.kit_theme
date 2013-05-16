@@ -1,45 +1,45 @@
 // mixins
 @import "compass/css3";
-@import "mixins";
-@import "kit_mixins";
+@import "general/mixins";
+@import "general/kit_mixins";
 
 // reset
-@import "normalize";
-@import "reset";
+@import "general/normalize";
+@import "general/reset";
 
 // variables
 @import "variables";
 
 // global
-@import "fonts";
-@import "html5";
-@import "base";
-@import "misc";
-@import "bootstrap_forms";
-@import "forms";
-@import "type";
+@import "general/fonts";
+@import "general/html5";
+@import "general/base";
+@import "general/misc";
 
 // components
-@import "bootstrap_nav";
-@import "tooltip";
-@import "badge";
-@import "button";
-@import "flash";
-@import "overlay";
-@import "close";
-@import "vote";
-@import "header";
-@import "subheader";
-@import "subnav";
-@import "sidebar";
-@import "sidebar_nav";
-@import "footer";
-@import "comment";
-@import "feedback";
-@import "pager";
-@import "paper_box";
-@import "content_list";
-@import "admin";
-@import "facet";
+@import "components/bootstrap_forms";
+@import "components/forms";
+@import "components/type";
+@import "components/bootstrap_nav";
+@import "components/tooltip";
+@import "components/badge";
+@import "components/button";
+@import "components/conditionals"; // flash, alert and overlay
+@import "components/vote";
+@import "components/pager";
+@import "components/facet";
+
+// widgets
+@import "widgets/header";
+@import "widgets/subheader";
+@import "widgets/subnav";
+@import "widgets/sidebar";
+@import "widgets/sidebar_nav";
+@import "widgets/footer";
+@import "widgets/comment";
+@import "widgets/feedback";
+@import "widgets/paper_box";
+@import "widgets/content_list";
+@import "widgets/admin";
 
 @import "overwrite";
