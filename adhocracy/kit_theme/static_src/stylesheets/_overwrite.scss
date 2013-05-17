@@ -41,29 +41,25 @@ h4 {
     padding-right: 0;
     padding-left: 0;
 }
-#proposals_table, .table {
-    .pager_wrapper {
-        background: #f4f4f4;
+ul.content_list {
+    background: #f4f4f4;
+    padding: 1em;
+    .hr, hr {
+        display: none;
+    }
+    > * {
         padding: 1em;
-        .hr, hr {
-            display: none;
+        &:nth-of-type(odd) {
+            background: #fff;
         }
-        ul.content_list {
-            > * {
-                padding: 1em;
-                &:nth-of-type(odd) {
-                    background: #fff;
-                }
-                &:nth-of-type(even) {
-                    background: transparent;
-                }
-                .meta {
-                    color: #888;
-                    margin: 0;
-                }
-                @include kit-rund-eckig(1em);
-            }
+        &:nth-of-type(even) {
+            background: transparent;
         }
+        .meta {
+            color: #888;
+            margin: 0;
+        }
+        @include kit-rund-eckig(1em);
     }
 }
 
