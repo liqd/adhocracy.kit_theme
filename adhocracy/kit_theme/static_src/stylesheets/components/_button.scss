@@ -74,9 +74,13 @@ a.button.highlight {
         width: 240px;
     }
     &:after {
-        // TODO
-        content: ">";
-        padding-left: 10px;
+        background: url('/images/sprite.png') no-repeat 0 -13*50px;
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
     }
 }
 
