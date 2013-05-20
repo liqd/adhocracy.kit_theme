@@ -60,7 +60,7 @@
     }
 }
 
-a.button {
+a.button, .btn {
     @include button($button-color);
 }
 a.button.highlight {
