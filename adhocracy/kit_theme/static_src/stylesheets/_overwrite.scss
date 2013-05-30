@@ -41,27 +41,6 @@ h4 {
     padding-right: 0;
     padding-left: 0;
 }
-ul.content_list {
-    background: #f4f4f4;
-    padding: 1em;
-    .hr, hr {
-        display: none;
-    }
-    > * {
-        padding: 1em;
-        &:nth-of-type(odd) {
-            background: #fff;
-        }
-        &:nth-of-type(even) {
-            background: transparent;
-        }
-        .meta {
-            color: #888;
-            margin: 0;
-        }
-        @include kit-rund-eckig(1em);
-    }
-}
 
 body {
     background-color: #fff;
@@ -114,9 +93,6 @@ div.old-body {
     > li {
         display: inline-block;
     }
-}
-.content_list > li {
-    border: none;
 }
 
 /* Metanavigation */

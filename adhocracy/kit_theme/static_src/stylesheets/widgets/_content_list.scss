@@ -1,0 +1,63 @@
+.content_list {
+    list-style: none;
+    margin: 0; // there should be no spacing between this list and a preceeding filter_box
+
+    // HACK: the current markup uses hr to produce a line at the bottom of each li.
+    // we use borders instead
+    .hr, hr {
+        display: none;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .level-1 {
+        padding-left: 1.5em;
+    }
+    .level-2 {
+        padding-left: 3em;
+    }
+    .level-3 {
+        padding-left: 4em;
+    }
+    .level-4 {
+        padding-left: 5.5em;
+    }
+    .level-5 {
+        padding-left: 7em;
+    }
+
+    #col1 & {
+        background: $bg1;
+        padding: 1em;
+
+        > * {
+            padding: 1em;
+
+            &:nth-child(odd) {
+                background: #fff;
+            }
+            &:nth-child(even) {
+                background: transparent;
+            }
+            .meta {
+                color: $fg1;
+                margin: 0;
+            }
+            @include kit-rund-eckig(1em);
+        }
+    }
+    #col3 & > * {
+        padding: 1em 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px dotted $border;
+        }
+    }  
+}
+
+// HACK
+.pager_wrapper > .hr {
+    display: none;
+}
