@@ -1,5 +1,6 @@
 // mixins
 @import "compass/css3";
+@import "compass/utilities/general/clearfix";
 @import "general/mixins";
 @import "general/kit_mixins";
 
@@ -11,15 +12,17 @@
 @import "variables";
 
 // global
+@import "general/utilities";
+@import "general/grid";
+@import "general/misc";
 @import "general/fonts";
 @import "general/html5";
-@import "general/base";
-@import "general/misc";
 
 // components
 @import "components/bootstrap_forms";
 @import "components/forms";
 @import "components/type";
+@import "components/morelink";
 @import "components/bootstrap_nav";
 @import "components/tooltip";
 @import "components/badge";
@@ -28,6 +31,7 @@
 @import "components/vote";
 @import "components/pager";
 @import "components/facet";
+@import "components/tutorial";
 
 // widgets
 @import "widgets/header";
@@ -39,7 +43,8 @@
 @import "widgets/comment";
 @import "widgets/feedback";
 @import "widgets/paper_box";
-@import "widgets/content_list";
 @import "widgets/admin";
+@import "widgets/content_list";
 
+// overwrite
 @import "overwrite";

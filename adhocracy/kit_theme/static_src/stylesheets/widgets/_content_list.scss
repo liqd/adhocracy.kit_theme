@@ -28,6 +28,10 @@
         padding-left: 7em;
     }
 
+    > * {
+        padding: 1em 0;
+        @include clearfix();
+    }
     #col1 & {
         background: $bg1;
         padding: 1em;
@@ -48,12 +52,8 @@
             @include kit-rund-eckig(1em);
         }
     }
-    #col3 & > * {
-        padding: 1em 0;
-
-        &:not(:last-child) {
-            border-bottom: 1px dotted $border;
-        }
+    #col3 & > *:not(:last-child) {
+        border-bottom: 1px dotted $border;
     }  
 }
 
