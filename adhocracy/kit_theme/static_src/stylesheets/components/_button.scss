@@ -6,6 +6,7 @@
     white-space: nowrap;
     border: none;
     cursor: pointer;
+    vertical-align: middle;
     &:hover {
         text-decoration: none;
     }
@@ -128,22 +129,8 @@ a.show_comments:hover, a.new_comment:hover, a.participate {
 }
 
 /* follow button */
-a.follow_paper, div.skip_follow {
-    height: 26px;
-    line-height: 26px;
-    @include border-radius(13px);
-    overflow: hidden;
-    display: inline-block;
-    font-weight: bold;
-    font-size: 14px;
-    padding: 0 20px;
-}
-
 a.follow_paper {
     @include round-button;
-    .sidebar_box & {
-        margin-bottom: 20px;
-    }
 
     // icon
     &:before {
@@ -172,23 +159,24 @@ a.follow_paper {
         @include linear-gradient(275deg, lighten($red, 14%), $red);
     }
 }
+div.skip_follow {
+    display: none;
+}
 
 /* delegate button */
 a.button.delegate {
     @include round-button;
-    margin: 0 0 20px;
 }
 
 // TODO should this really be a button?
 .showhide_button {
-    @include button($button-color);
     &:after {
         display: inline-block;
         width: 0;
         height: 0;
-        border-top:     4px solid;
+        border-top: 4px solid;
         border-right: 4px solid transparent;
-        border-left:    4px solid transparent;
+        border-left: 4px solid transparent;
         content: "";
         vertical-align: middle;
     }
