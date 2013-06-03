@@ -150,3 +150,10 @@ div#metanavigation a:hover {
 #new_proposals_table .pager_wrapper {
     margin-bottom: 1em;
 }
+
+div[comment_id] {
+    margin-top: 1em;
+    h4 {
+        line-height: 2em;
+    }
+}
