@@ -51,6 +51,8 @@
     line-height: 26px;
     font-size: 14px;
     @include border-radius(13px);
+    padding: 0 1.5em;
+    font-weight: bold;
 
     color: $black;
     @include linear-gradient(0deg, darken(#fff, 10%), #fff);
