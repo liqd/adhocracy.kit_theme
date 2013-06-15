@@ -19,7 +19,6 @@
     <!-- Head: base tag -->
     <replace theme="/html/head/base" content="/html/head/base" />
     <!-- Head: styles and scripts-->
-    <drop theme="/html/head/link[not(contains(@href, 'style_custom.css')) and contains(@rel, 'stylesheet')]" if-content="/html/head/link"/>
     <before theme="/html/head/link[1]" content="/html/head/link[contains(@rel, 'stylesheet')]" />
     <drop theme="/html/head/script" if-content="/html/head/script"/>
     <append theme="/html/head" content="/html/head/script" />
