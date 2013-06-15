@@ -48,7 +48,6 @@
       <drop content="//a[@id='logo']/img/attribute::src"/>
       <!-- if not body.compact -->
       <rules if-content="not(//body[contains(@class, 'compact')])">
-        <replace content="//a[@id='logo']/img/attribute::src"><xsl:attribute name="src">/static_theme/static/images/logo_ypart_large.png</xsl:attribute></replace>
         <replace css:content="div#topnav" if-content="not(//body[@class='compact'])">
           <div id="topnav">
               <a class="skip" title="skip link" href="#navigation">Skip to the navigation</a><span class="hideme">.</span>
