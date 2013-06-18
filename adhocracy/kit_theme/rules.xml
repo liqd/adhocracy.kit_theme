@@ -34,6 +34,19 @@
       </xsl:for-each>
     </append>
 
+    <replace css:content="li#nav_instances">
+      <li>
+        <a href="/i/leitbild/instance/leitbild" title="Debatte">Debatte</a>
+      </li>
+    </replace>
+    <rules if-path="/i/leitbild"> <!-- startswith -->
+      <replace css:content="li#nav_instances">
+        <li class="current">
+          <a href="/i/leitbild/instance/leitbild" title="Debatte">Debatte</a>
+        </li>
+      </replace>
+    </rules>
+
     <!--Body-->
     <drop theme="/html/body/div/div[@class='old-body']/*" if-content="/html/body"/>
     <append theme="/html/body/div/div[@class='old-body']" content="/html/body/*" />
