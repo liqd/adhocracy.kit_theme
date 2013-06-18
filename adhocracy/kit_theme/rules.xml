@@ -75,23 +75,18 @@
                         <div id="footer_line">
                             <div id="second_footer_line" class="subcolumns" role="complementary">
                                 <div class="c33l footer_content">
-                                    <ul><li><a class="staticlink_about" href="/static/about.html">
-                                                Wie funktioniert Adhocracy?
-                                        </a></li>
+                                    <ul>
                                         <li><a class="staticlink_codex" href="/static/misc/codex.html">
                                                 Verhaltenscodex
                                         </a></li>
-                                        <li><a class="staticlink_terms" href="/static/misc/terms.html">
-                                                Nutzungsbedingungen
-                                        </a></li>
-
                                         <li><a class="staticlink_privacy" href="/static/misc/privacy.html">
                                                 Datenschutz
                                         </a></li>
                                         <li><a class="staticlink_imprint" href="/static/misc/imprint.html">
                                                 Impressum
                                         </a></li>
-                                </ul></div>
+                                    </ul>
+                                </div>
                                 <div class="c33l footer_content">
                                 </div>
 
