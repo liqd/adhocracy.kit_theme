@@ -11,6 +11,9 @@
     h3 {
         font-size: 16px;
     }
+    .tile.text.history h3 {
+        color: $black;
+    }
 
     .level-1 {
         padding-left: 1.5em;
@@ -26,6 +29,11 @@
     }
     .level-5 {
         padding-left: 7em;
+    }
+
+    .logo {
+        float: left;
+        margin: 0 10px 10px 0;
     }
 
     > * {
@@ -60,4 +68,29 @@
 // HACK
 .pager_wrapper > .hr {
     display: none;
+}
+
+.tile.event {
+    padding: 10px 0 2px 0;
+    border-top: 1px dotted $border;
+    &:first-child {
+        border-top: none;
+    }
+}
+
+.event_text {
+    padding: 3px 0;
+
+    /* force markdown created text to be small */
+    * {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: small !important;
+        background: none !important;
+        /*color: $fg1 !important;*/
+        font-variant: none !important;
+    }
+    li {
+        margin-left: 20px !important;
+    }
 }
