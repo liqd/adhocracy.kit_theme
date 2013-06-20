@@ -45,6 +45,9 @@
           <a href="/i/leitbild/instance/leitbild" title="Debatte">Debatte</a>
         </li>
       </replace>
+      <replace content="//li[@id='nav_home']/attribute::class">
+        <xsl:attribute name="class"></xsl:attribute>
+      </replace>
     </rules>
 
     <!--Body-->
