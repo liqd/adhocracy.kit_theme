@@ -1,0 +1,36 @@
+.ui-tabs {
+    @include clearfix();
+    padding-bottom: 1em !important;
+
+    ul.ui-tabs-nav {
+        color: #fff;
+        margin: 0px;
+
+        // reset jquery-ui
+        background: $bg2;
+        border: none;
+
+        li {
+            // reset jquery-ui
+            border: none;
+
+            display: inline-block;
+            a {
+                @include button($button-color);
+            }
+            &.current, &.ui-state-active {
+                a {
+                    @include button-background(darken(#fff, 10%));
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .ui-tabs-hide {
+        display: none;
+    }
+    .put-nav {
+        display: none;
+    }
+}
