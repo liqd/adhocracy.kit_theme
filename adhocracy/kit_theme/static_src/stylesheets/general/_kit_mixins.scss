@@ -1,4 +1,3 @@
-
 @mixin kit-gradient($color) {
     $color1: lighten(desaturate($color, 60%), 20%);
     $color2: $color;
@@ -12,7 +11,7 @@
     background: -o-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
     background: -ms-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
     background: linear-gradient(top bottom, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
-    @include filter-gradient($color2, $color3, vertical);
+    //@include filter-gradient($color2, $color3, vertical);
 
     border: 1px solid $color;
 }
@@ -20,4 +19,51 @@
 @mixin kit-rund-eckig($radius) {
     @include border-top-right-radius($radius);
     @include border-bottom-left-radius($radius);
+}
+
+// overwrite default mixins
+@mixin button-background($color) {
+    @include kit-gradient($color);
+
+    &:hover {
+        @include kit-gradient(lighten($color, 7%));
+    }
+
+    @include kit-rund-eckig(0.4em);
+}
+
+@mixin button-round-background() {
+    background-color: darken(#fff, 5%);
+    @include background-image(linear-gradient(bottom, darken(#fff, 10%), #fff));
+    border: 1px solid darken(#fff, 15%);
+    &:hover {
+        background-color: darken(#fff, 7%);
+        @include background-image(linear-gradient(bottom, darken(#fff, 12%), darken(#fff, 2%)));
+    }
+}
+
+@mixin button-small($color1, $color2) {
+    @include button-base;
+    height: 14px;
+    line-height: 14px;
+    @include border-radius(7px);
+    padding: 0 10px;
+    font-size: 11px;
+
+    background-color: $color1;
+    @include background-image(linear-gradient(top, lighten($color1, 7%), $color1));
+    &:hover {
+        color: #fff;
+        background-color: $color2;
+        @include background-image(linear-gradient(top, lighten($color2, 7%), $color2));
+    }
+    &:active, &.active {
+        background-color: $color2;
+        @include background-image(linear-gradient(bottom, lighten($color2, 7%), $color2));
+        @include box-shadow(1px 1px 1px #333 inset);
+    }
+    .inactive & {
+        background: $bg2 !important;
+        @include box-shadow(none);
+    }
 }
