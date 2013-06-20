@@ -19,7 +19,7 @@ header {
         }
         > li:not(:last-child):after {
             color: #888;
-            content: "|";
+            content: " | ";
         }
     }
     .hlist ul {

@@ -1,3 +1,7 @@
+#main {
+    @include clearfix();
+}
+
 body {
     font-size: 11px;
     line-height: 16px;
@@ -67,7 +71,7 @@ div.old-body {
     @include border-bottom-left-radius(1.8em);
 }
 #main {
-    padding: 3em 0 2em;
+    padding: 2em 0;
     margin: 0;
 }
 .page_margins {
