@@ -125,10 +125,10 @@ div#metanavigation a:hover {
     height: 100px;
     position: relative;
     #kit-logo {
-        @include box-sizing('border-box');
-        padding: 1em 2em;
+        padding: 11px 22px;
         background: white;
-        height: 100%;
+        height: 78px;
+        width: 171px;
         display: inline-block;
     }
     h1 {
