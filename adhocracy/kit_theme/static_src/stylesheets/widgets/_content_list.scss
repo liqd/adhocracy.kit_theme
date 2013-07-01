@@ -72,9 +72,9 @@
 
 .tile.event {
     padding: 10px 0 2px 0;
-    border-top: 1px dotted $border;
-    &:first-child {
-        border-top: none;
+    border-bottom: 1px dotted $border;
+    &:last-child {
+        border-bottom: none;
     }
 }
 
