@@ -25,6 +25,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     border-bottom: 1px solid $border;
 }
+h2 {
+    color: $primary-color;
+}
 h4 {
     background:url(/img/intern/headline_bg.gif) center left repeat-x;
 }
