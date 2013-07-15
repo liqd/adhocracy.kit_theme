@@ -166,3 +166,13 @@ div[comment_id] {
     font-size: 1.5em;
     font-weight: bold;
 }
+
+#subnav {
+    li {
+        &.current {
+            a {
+                @include button-background(#fff);
+            }
+        }
+    }
+}
