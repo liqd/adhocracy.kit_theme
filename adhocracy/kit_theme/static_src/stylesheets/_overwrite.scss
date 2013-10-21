@@ -164,3 +164,18 @@ div[comment_id] {
         line-height: 2em;
     }
 }
+
+.create_proposal_link {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#subnav {
+    li {
+        &.current {
+            a {
+                @include button-background(#fff);
+            }
+        }
+    }
+}
