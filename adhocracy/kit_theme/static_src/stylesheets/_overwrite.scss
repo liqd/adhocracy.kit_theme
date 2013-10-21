@@ -76,6 +76,21 @@ div.old-body {
 #main {
     padding: 2em 0;
     margin: 0;
+
+    .page_wrapper {
+        padding-left: 23px;
+    }
+    #col1_content, .full_teaser {
+        padding-left: 0;
+    }
+}
+#col3_content {
+    margin-left: 8px;
+}
+#settings #col3_content {
+    .well {
+        width: 141px;
+    }
 }
 .page_margins {
     margin: 0;
