@@ -62,6 +62,12 @@ body {
     width: 1004px;
     margin: 0 auto;
     padding: 2em;
+
+    html.overlay & {
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
 }
 div.kit-wrapper {
     @include kit-rund-eckig(2em);
@@ -91,6 +97,9 @@ div.old-body {
     .well {
         width: 141px;
     }
+}
+html.overlay #main .page_wrapper {
+    padding-left: 0;
 }
 .page_margins {
     margin: 0;
