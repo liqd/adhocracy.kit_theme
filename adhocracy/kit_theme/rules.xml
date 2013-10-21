@@ -5,6 +5,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <theme href="theme.html" />
+  <notheme css:if-not-content="#header" />
 
   <!--do not theme ajax requests-->
   <xi:include href="../../../adhocracy.wordpressbasic_theme/adhocracy/wordpressbasic_theme/rules_notheme.xml" />
