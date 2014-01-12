@@ -1,14 +1,12 @@
-header {
+#header {
     display: block;
     text-align: right;
     margin-bottom: 1em;
-    padding-right: 3em;
-    line-height: 2em;
+    line-height: 2;
+    background: none;
+
     a#logo, #topnav {
         display: none;
-    }
-    div#header {
-        background: none;
     }
     .hlist > ul {
         font-weight: bold;
@@ -47,7 +45,7 @@ header {
 
                 li {
                     display: block;
-                    line-height: 2em;
+                    line-height: 2;
                     text-align: left;
                     &:not(:last-child) {
                         border-bottom: 1px dotted #888;

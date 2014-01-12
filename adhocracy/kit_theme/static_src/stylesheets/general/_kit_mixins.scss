@@ -5,12 +5,7 @@
     $color4: $color;
 
     background: $color;
-    background: -moz-linear-gradient(top, $color1 0%, $color2 47%, $color3 53%, $color4 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$color1), color-stop(47%,$color2), color-stop(53%,$color3), color-stop(100%,$color4));
-    background: -webkit-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
-    background: -o-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
-    background: -ms-linear-gradient(top, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
-    background: linear-gradient(top bottom, $color1 0%,$color2 47%,$color3 53%,$color4 100%);
+    @include background-image(linear-gradient(to bottom, $color1 0%,$color2 47%,$color3 53%,$color4 100%));
     //@include filter-gradient($color2, $color3, vertical);
 
     border: 1px solid $color;
@@ -25,7 +20,7 @@
 @mixin button-background($color) {
     @include kit-gradient($color);
 
-    &:hover {
+    &:hover, &:focus {
         @include kit-gradient(lighten($color, 7%));
     }
 
@@ -36,7 +31,7 @@
     background-color: darken(#fff, 5%);
     @include background-image(linear-gradient(bottom, darken(#fff, 10%), #fff));
     border: 1px solid darken(#fff, 15%);
-    &:hover {
+    &:hover, &:focus {
         background-color: darken(#fff, 7%);
         @include background-image(linear-gradient(bottom, darken(#fff, 12%), darken(#fff, 2%)));
     }
@@ -52,7 +47,7 @@
 
     background-color: $color1;
     @include background-image(linear-gradient(top, lighten($color1, 7%), $color1));
-    &:hover {
+    &:hover, &:focus {
         color: #fff;
         background-color: $color2;
         @include background-image(linear-gradient(top, lighten($color2, 7%), $color2));
